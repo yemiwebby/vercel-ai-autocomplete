@@ -26,7 +26,8 @@ export default function Page() {
           setSuggestion("");
           setError(data.completion || "Failed to fetch suggestion");
         } else {
-          const cleaned = data.completion.replace(/[🌀-🛿]/gu, "").trim();
+          // const cleaned = data.completion.replace(/[🌀-🛿]/gu, "").trim();
+          const cleaned = (data.completion || "").trim();
           setSuggestion(cleaned);
         }
       } catch (err) {
